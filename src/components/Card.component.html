@@ -1,0 +1,15 @@
+<div class="card cont" >
+  <div>
+    <div class="card-title"><h3>{{ moneda.id }} </h3><h3>{{moneda.symbol.toUpperCase()}}</h3> </div>
+    <!-- <span>{{ moneda.symbol }}</span> -->
+    <img class="card-img-top" src="{{ moneda.image }}" alt="{{ moneda.name }}"  />
+  </div>
+  <span class="card-title">$ {{ moneda.current_price.toLocaleString() }}</span>
+  <span
+    [ngClass]="
+      moneda.price_change_percentage_24h > 0 ? 'text-success' : 'text-danger'
+    "
+    >{{ moneda.price_change_percentage_24h.toLocaleString() }}</span
+  >
+<!--   <span>{{ moneda.total_volume.toLocaleString() }}</span> -->
+</div>
